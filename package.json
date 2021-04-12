@@ -1,0 +1,40 @@
+{
+  "name": "path-expression",
+  "version": "1.0.0",
+  "description": "Property path creation from a code expression",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "prepublishOnly" : "npm test",
+    "prepare" : "npm run build",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charleshetier/path-expression.git"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "binding",
+    "expression",
+    "parser",
+    "vanilla"
+  ],
+  "author": "Charles Hetier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charleshetier/path-expression/issues"
+  },
+  "homepage": "https://github.com/charleshetier/path-expression#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.4"
+  }
+}
