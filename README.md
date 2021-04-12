@@ -1,7 +1,7 @@
 # path-expression
-Property path creation from an expression:
+Property path creation from an expression
 
-Basicaly converts expression : 
+Basicaly converts expression
 ```typescript
 o => o.foo.bar
 ``` 
@@ -10,13 +10,24 @@ into
 ['foo', 'bar']
 ```
 
+# Installation
+using npm :
+```
+npm i path-expression
+```
+
+or using yarn :
+```
+yarn add path-expression
+```
+
 ## Usage
 for basic case :
 ```typescript
 import {parsePathExpression} from 'path-expression';
 
-const result = parsePathExpression(o => o.prop1);
-expect(result).toEqual(['prop1']);
+const result = parsePathExpression(o => o.foo);
+expect(result).toEqual(['foo']);
 ```
 
 ...and more complex cases :
@@ -24,10 +35,10 @@ expect(result).toEqual(['prop1']);
 import {parsePathExpression} from 'path-expression';
 
 const myVar1 = 5;
-const myVar2 = 'toto';
-const result = parsePathExpression(o => o[5][myVar1].prop1[myVar2]);
+const myVar2 = 'bar';
+const result = parsePathExpression(o => o[1][myVar1].foo[myVar2]);
 
-expect(result).toEqual([5, myVar1, 'prop1', myVar2]);
+expect(result).toEqual([1, 5, 'foo', 'bar']);
 ```
 
 ## Compatibility
